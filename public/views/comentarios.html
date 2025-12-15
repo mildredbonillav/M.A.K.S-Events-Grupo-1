@@ -1,0 +1,59 @@
+<h2>Gestión de Comentarios</h2>
+
+<div class="usuarios-header">
+    <button class="btn btn-primary" onclick="showModalResena()">
+        <i class="fas fa-comment"></i> Nuevo Comentario
+    </button>
+
+    <input type="text" placeholder="Buscar comentario..." id="search-comentario">
+</div>
+
+<div class="usuarios-table-container">
+    <table class="usuarios-table">
+        <thead>
+            <tr>
+        <th>Usuario</th>
+        <th>Evento</th>
+        <th>Comentario</th>
+        <th>Calificación</th>
+        <th>Fecha</th> <!-- ✅ ESTE FALTABA -->
+    </tr>
+</thead>
+
+
+        <tbody id="tabla-comentarios"></tbody>
+    </table>
+</div>
+
+<!-- Modal -->
+<div id="form-comentario-container" style="display:none;">
+    <form id="form-comentario">
+
+        <input type="hidden" id="comentarioId">
+
+        <!-- ❌ USUARIO YA NO SE PIDE -->
+
+        <label>Evento:</label>
+        <select id="eventoCom" required>
+            <option value="">Seleccione un evento</option>
+        </select>
+
+        <label>Comentario:</label>
+        <textarea id="textoCom" required></textarea>
+
+        <label>Calificación (1 a 5):</label>
+        <select id="calificacionCom" required>
+            <option value="">Seleccione</option>
+            <option value="1">1 ⭐</option>
+            <option value="2">2 ⭐⭐</option>
+            <option value="3">3 ⭐⭐⭐</option>
+            <option value="4">4 ⭐⭐⭐⭐</option>
+            <option value="5">5 ⭐⭐⭐⭐⭐</option>
+        </select>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="button" class="btn btn-secondary" onclick="closeModalResena()">Cancelar</button>
+        </div>
+    </form>
+</div>

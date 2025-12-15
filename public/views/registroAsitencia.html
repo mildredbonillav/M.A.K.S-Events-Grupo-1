@@ -1,0 +1,39 @@
+<h2>Registro de Asistencia</h2>
+
+<!-- Header con búsqueda y selección de evento -->
+<div class="asistencia-header">
+    <select id="select-evento">
+        <option value="">Seleccione un evento</option>
+    </select>
+
+    <input type="text" id="buscar-participante" placeholder="Buscar participante...">
+</div>
+
+<!-- Mensaje de estado -->
+<div id="asistencia-message" style="margin: 15px 0; padding: 10px; border-radius: 6px; display: none;"></div>
+
+<!-- Tabla de participantes -->
+<div class="asistencia-table-container">
+    <table class="asistencia-table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Correo</th>
+                <th>Asistencia</th>
+            </tr>
+        </thead>
+        <tbody id="participantes-body">
+            <tr>
+                <td colspan="4" style="text-align: center; padding: 20px; color: #7f8c8d;">
+                    Seleccione un evento para ver los participantes
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Botón para guardar asistencia -->
+<div class="form-actions" style="margin-top: 15px;">
+    <button id="btn-guardar-asistencia" class="btn btn-primary" disabled>Guardar Asistencia</button>
+</div>

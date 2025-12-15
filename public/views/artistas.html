@@ -1,0 +1,61 @@
+<h2>Artistas</h2>
+
+<!-- Header con botón y búsqueda -->
+<div class="artistas-header">
+    <button class="btn btn-primary" onclick="showModalArtista()">
+        <i class="fas fa-user-plus"></i> Nuevo Artista
+    </button>
+    <input type="text" placeholder="Buscar artista..." id="search-artista">
+</div>
+
+<!-- Tabla de artistas -->
+<div class="artistas-table-container">
+    <table class="artistas-table">
+        <thead>
+            <tr>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Se llena dinámicamente con JS -->
+        </tbody>
+    </table>
+</div>
+
+<!-- Formulario modal para artistas -->
+<div id="form-artista-container" style="display:none;">
+    <form id="form-artista">
+        <h3>Nuevo Artista</h3>
+
+        <label for="nombresArtista">Nombres:</label>
+        <input
+            type="text"
+            id="nombresArtista"
+            name="nombresArtista"
+            placeholder="Ej: Sofía"
+            required
+        >
+
+        <label for="apellidosArtista">Apellidos:</label>
+        <input
+            type="text"
+            id="apellidosArtista"
+            name="apellidosArtista"
+            placeholder="Ej: Barboza"
+            required
+        >
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button
+                type="button"
+                class="btn btn-secondary"
+                onclick="closeModalArtista()"
+            >
+                Cancelar
+            </button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,23 @@
+<h2>Inicio de Sesión</h2>
+
+<div class="auth-container">
+    <h2>Iniciar Sesión</h2>
+    <form id="form-login">
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" placeholder="Ingresa tu correo" required>
+
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" placeholder="Ingresa tu contraseña" required>
+
+        <p id="login-message" style="color: red; font-size: 14px; margin-top: 10px; text-align: center;"></p>
+
+        <div class="form-actions">
+            <button type="submit" id="btn-login" class="btn btn-primary">Iniciar sesión</button>
+        </div>
+
+        <p style="margin-top: 20px; font-size: 14px; color: #7f8c8d;">
+            ¿No tienes una cuenta? 
+            <span class="toggle-auth" onclick="loadView('registroCliente')">Regístrate aquí</span>
+        </p>
+    </form>
+</div>

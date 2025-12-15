@@ -1,0 +1,80 @@
+<h2>Gestión de Eventos</h2>
+
+<!-- Header con botón y búsqueda -->
+<div class="eventos-header">
+    <button class="btn btn-primary" onclick="showModalEvento()">
+        <i class="fas fa-calendar-plus"></i> Nuevo Evento
+    </button>
+    <input type="text" placeholder="Buscar evento..." id="search-evento">
+</div>
+
+<!-- Tabla de eventos -->
+<div class="eventos-table-container">
+    <table class="eventos-table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Organizador</th>
+                <th>Fecha</th>
+                <th>Artistas</th>
+                <th>Entradas</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Se llenará dinámicamente -->
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal: Registrar evento -->
+<div id="form-evento-container" style="display:none;">
+    <form id="form-evento">
+        <h3>Nuevo Evento</h3>
+
+        <!-- Datos base -->
+        <label for="nombreEvento">Nombre del Evento: *</label>
+        <input type="text" id="nombreEvento" name="nombreEvento" placeholder="Nombre del evento" required>
+
+        <label for="fechaEvento">Fecha: *</label>
+        <input type="date" id="fechaEvento" name="fechaEvento" required>
+
+        <label for="lugarEvento">Lugar:</label>
+        <input type="text" id="lugarEvento" name="lugarEvento" placeholder="Lugar del evento">
+
+        <label for="categoriaEvento">Categoría:</label>
+        <select id="categoriaEvento" name="categoriaEvento">
+            <option value="">Seleccione categoría</option>
+        </select>
+
+        <label for="descripcionEvento">Descripción:</label>
+        <textarea id="descripcionEvento" name="descripcionEvento" placeholder="Descripción del evento" rows="3"></textarea>
+
+        <label for="organizadorEvento">Organizador: *</label>
+        <select id="organizadorEvento" name="organizadorEvento" required>
+            <option value="">Seleccione organizador</option>
+        </select>
+
+        <!-- Artistas -->
+        <h4 style="margin-top: 15px;">Artistas del Evento</h4>
+        <div id="lista-artistas"></div>
+
+        <button type="button" class="btn btn-secondary" onclick="agregarArtista()">
+            <i class="fas fa-plus"></i> Agregar Artista
+        </button>
+
+        <!-- Tipos de Entrada -->
+        <h4 style="margin-top: 20px;">Tipos de Entrada</h4>
+        <div id="lista-entradas"></div>
+
+        <button type="button" class="btn btn-secondary" onclick="agregarEntrada()">
+            <i class="fas fa-plus"></i> Agregar Tipo de Entrada
+        </button>
+
+        <!-- Botones del formulario -->
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Guardar Evento</button>
+            <button type="button" class="btn btn-secondary" onclick="closeModalEvento()">Cancelar</button>
+        </div>
+    </form>
+</div>

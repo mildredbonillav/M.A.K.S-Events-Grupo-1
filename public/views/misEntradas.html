@@ -1,0 +1,44 @@
+<h2>Mis Eventos</h2>
+
+<!-- Search -->
+<div class="mis-eventos-header">
+    <input type="text" id="buscar-mis-eventos" placeholder="Buscar evento...">
+</div>
+
+<!-- Lista de eventos comprados -->
+<div class="mis-eventos-list" id="mis-eventos-list">
+    <p style="text-align: center; padding: 20px; color: #7f8c8d;">Cargando tus eventos...</p>
+</div>
+
+<!-- Modal Detalle Entradas -->
+<div id="detalle-entradas-modal" onclick="handleModalClick(event)">
+    <div class="modal-box" onclick="event.stopPropagation()">
+        <span class="close" onclick="closeDetalleEntradasModal()" style="position: absolute; top: 10px; right: 15px; cursor: pointer; font-size: 24px; color: #999;">&times;</span>
+        <h3>Detalle de Entradas</h3>
+
+        <label>Evento:</label>
+        <input type="text" id="detalle-evento" readonly>
+
+        <label>Tipo de entrada:</label>
+        <input type="text" id="detalle-tipo" readonly>
+
+        <label>Cantidad:</label>
+        <input type="text" id="detalle-cantidad" readonly>
+
+        <label>Precio unitario:</label>
+        <input type="text" id="detalle-precio" readonly>
+
+        <label>Total:</label>
+        <input type="text" id="detalle-total" readonly>
+
+        <p style="margin-top: 15px; font-size: 14px; color: #7f8c8d;">
+            Aquí podrías mostrar códigos QR, identificadores de las entradas,
+            o permitir descargar los tickets.
+        </p>
+
+        <div class="form-actions">
+            <button id="btn-descargar-ticket" class="btn btn-primary" onclick="descargarTicket()">Descargar Ticket</button>
+            <button class="btn btn-secondary" onclick="closeDetalleEntradasModal()">Cerrar</button>
+        </div>
+    </div>
+</div>

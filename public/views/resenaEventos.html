@@ -1,0 +1,81 @@
+<h2>Reseñas de Eventos</h2>
+
+<!-- Header con botón y búsqueda -->
+<div class="reviews-header">
+    <button class="btn btn-primary" onclick="showModalReview()">
+        <i class="fas fa-comment-dots"></i> Nueva Reseña
+    </button>
+
+    <input type="text" placeholder="Buscar reseña o evento..." id="search-review">
+</div>
+
+<!-- Tabla de reseñas -->
+<div class="reviews-table-container">
+    <table class="reviews-table">
+        <thead>
+            <tr>
+                <th>Evento</th>
+                <th>Comentario</th>
+                <th>Calificación</th>
+                <th>Fecha</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Ejemplo estático -->
+            <tr>
+                <td>Festival de Música 2025</td>
+                <td>Excelente ambiente y organización.</td>
+                <td>5</td>
+                <td>2025-03-20</td>
+                <td>
+                    <button class="btn btn-edit" title="Editar"><i class="fas fa-edit"></i></button>
+                    <button class="btn btn-delete" title="Eliminar"><i class="fas fa-trash-alt"></i></button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Expo Arte Digital</td>
+                <td>Muy interesante pero faltó más interacción.</td>
+                <td>3</td>
+                <td>2025-02-10</td>
+                <td>
+                    <button class="btn btn-edit"><i class="fas fa-edit"></i></button>
+                    <button class="btn btn-delete"><i class="fas fa-trash-alt"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal para agregar reseña -->
+<div id="form-review-container" style="display:none;">
+    <form id="form-review">
+        <h3>Nueva Reseña</h3>
+
+        <label for="evento">Evento:</label>
+        <select id="evento" name="evento" required>
+            <option value="">Seleccione un evento</option>
+            <option value="festival2025">Festival de Música 2025</option>
+            <option value="expoarte">Expo Arte Digital</option>
+        </select>
+
+        <label for="comentario">Comentario:</label>
+        <textarea id="comentario" name="comentario" placeholder="Escribe tu comentario..." rows="4" required></textarea>
+
+        <label for="calificacion">Calificación (1 a 5):</label>
+        <select id="calificacion" name="calificacion" required>
+            <option value="">Seleccione</option>
+            <option value="1">1 ★</option>
+            <option value="2">2 ★★</option>
+            <option value="3">3 ★★★</option>
+            <option value="4">4 ★★★★</option>
+            <option value="5">5 ★★★★★</option>
+        </select>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="button" class="btn btn-secondary" onclick="closeReviewModal()">Cancelar</button>
+        </div>
+    </form>
+</div>

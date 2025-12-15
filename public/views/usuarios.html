@@ -1,0 +1,87 @@
+<h2>Usuarios</h2>
+
+<!-- Header con botón y búsqueda -->
+<div class="usuarios-header">
+    <button class="btn btn-primary" onclick="showModalUsuario()">
+        <i class="fas fa-user-plus"></i> Nuevo Usuario
+    </button>
+    <input type="text" placeholder="Buscar usuario..." id="search-usuario">
+</div>
+
+<!-- Tabla de usuarios -->
+<div class="usuarios-table-container">
+    <table class="usuarios-table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Correo</th>
+                <th>Rol</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Se llena dinámicamente con JS -->
+        </tbody>
+    </table>
+</div>
+
+<!-- Formulario modal para usuarios -->
+<div id="form-usuario-container" style="display:none;">
+    <form id="form-usuario">
+        <h3>Nuevo Usuario</h3>
+
+        <label for="nombreUsuario">Nombre:</label>
+        <input
+            type="text"
+            id="nombreUsuario"
+            name="nombreUsuario"
+            placeholder="Ej: Ana"
+            required
+        >
+
+        <label for="apellidosUsuario">Apellidos:</label>
+        <input
+            type="text"
+            id="apellidosUsuario"
+            name="apellidosUsuario"
+            placeholder="Ej: Pérez Soto"
+            required
+        >
+
+        <label for="correoUsuario">Correo electrónico:</label>
+        <input
+            type="email"
+            id="correoUsuario"
+            name="correoUsuario"
+            placeholder="correo@ejemplo.com"
+            required
+        >
+
+        <label for="rolUsuario">Rol:</label>
+        <select id="rolUsuario" name="rolUsuario" required>
+            <option value="cliente">Cliente</option>
+            <option value="asistente">Asistente</option>
+            <option value="admin">Administrador</option>
+        </select>
+
+        <label for="passwordUsuario">Contraseña:</label>
+        <input
+            type="password"
+            id="passwordUsuario"
+            name="passwordUsuario"
+            placeholder="Mínimo 6 caracteres"
+        >
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button
+                type="button"
+                class="btn btn-secondary"
+                onclick="closeModalUsuario()"
+            >
+                Cancelar
+            </button>
+        </div>
+    </form>
+</div>

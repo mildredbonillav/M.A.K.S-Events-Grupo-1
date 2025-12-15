@@ -1,0 +1,58 @@
+<h2>Categorías de Eventos</h2>
+
+<!-- Header con botón y búsqueda -->
+<div class="categorias-header">
+    <button class="btn btn-primary" onclick="showModalCategoria()">
+        <i class="fas fa-folder-plus"></i> Nueva Categoría
+    </button>
+    <input type="text" placeholder="Buscar categoría..." id="search-categoria">
+</div>
+
+<!-- Tabla de categorías -->
+<div class="categorias-table-container">
+    <table class="categorias-table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Conferencias</td>
+                <td>Eventos educativos y charlas especializadas</td>
+                <td>
+                    <button class="btn btn-edit" title="Editar"><i class="fas fa-edit"></i></button>
+                    <button class="btn btn-delete" title="Eliminar"><i class="fas fa-trash-alt"></i></button>
+                </td>
+            </tr>
+            <tr>
+                <td>Talleres</td>
+                <td>Sesiones prácticas guiadas</td>
+                <td>
+                    <button class="btn btn-edit" title="Editar"><i class="fas fa-edit"></i></button>
+                    <button class="btn btn-delete" title="Eliminar"><i class="fas fa-trash-alt"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Formulario modal para categorías -->
+<div id="form-categoria-container" style="display:none;">
+    <form id="form-categoria">
+        <h3>Nueva Categoría</h3>
+
+        <label for="nombreCategoria">Nombre de la Categoría:</label>
+        <input type="text" id="nombreCategoria" name="nombreCategoria" placeholder="Ej: Conferencias" required>
+
+        <label for="descripcionCategoria">Descripción:</label>
+        <textarea id="descripcionCategoria" name="descripcionCategoria" placeholder="Describe la categoría" rows="4" required></textarea>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="button" class="btn btn-secondary" onclick="closeModalCategoria()">Cancelar</button>
+        </div>
+    </form>
+</div>
